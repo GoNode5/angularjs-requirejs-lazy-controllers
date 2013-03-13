@@ -14,17 +14,17 @@ I've read that it's frowned upon to mod the dom in the controller so I'm looking
 
 routeConfig.config('../partials/view1.html', 'controllers/first', '#someDomElementID')
 
-<pre><code><div id="ctrl1">
-    <p>{{message}}</p>
-    <a href="#/view1" class="btn">{{btn1}}</a>
-    <a href="#/view2" class="btn">{{btn2}}</a>
-</div>
+&lt;div id="ctrl1"&gt;
+    &lt;p&gt;{{message}}&lt;/p&gt;
+    &lt;a href="#/view1" class="btn"&gt;{{btn1}}&lt;/a&gt;
+    &lt;a href="#/view2" class="btn"&gt;{{btn2}}&lt;/a&gt;
+&lt;/div&gt;
 
-<div id="ctrl2">
-    <p>{{message}}</p>
-    <a href="#/view1" class="btn">{{btn1}}</a>
-    <a href="#/view2" class="btn">{{btn2}}</a>
-</div></code></pre>
+&lt;div id="ctrl2"&gt;
+    &lt;p&gt;{{message}}&lt;/p&gt;
+    &lt;a href="#/view1" class="btn"&gt;{{btn1}}&lt;/a&gt;
+    &lt;a href="#/view2" class="btn"&gt;{{btn2}}&lt;/a&gt;
+&lt;/div&gt;
 
 /* CONTROLLER 1 (first.js) */
 define([], function () {
@@ -68,14 +68,16 @@ define(['app', 'utils/route-config'], function (app, routeConfig) {
     return app;
 });
 
-<pre><code><!-- Expected Output --><div id="ctrl1" ng-controller='FirstController'>
-    <p>I'm the 1st controller!</p>
-    <a href="#/view1" class="btn">Ctrl1 Btn 1</a>
-    <a href="#/view2" class="btn">Ctrl1 Btn 2</a>
-</div>
 
-<div id="ctrl2" ng-controller='FirstController'>
-    <p>I'm the 2nd controller!</p>
-    <a href="#/view1" class="btn">Ctrl2 Btn 1</a>
-    <a href="#/view2" class="btn">Ctrl2 Btn 2</a>
-</div></code></pre>
+&lt;!-- Expected Output --&gt;
+&lt;div id="ctrl1" ng-controller='FirstController'&gt;
+    &lt;p&gt;I'm the 1st controller!&lt;/p&gt;
+    &lt;a href="#/view1" class="btn"&gt;Ctrl1 Btn 1&lt;/a&gt;
+    &lt;a href="#/view2" class="btn"&gt;Ctrl1 Btn 2&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div id="ctrl2" ng-controller='FirstController'&gt;
+    &lt;p&gt;I'm the 2nd controller!&lt;/p&gt;
+    &lt;a href="#/view1" class="btn"&gt;Ctrl2 Btn 1&lt;/a&gt;
+    &lt;a href="#/view2" class="btn"&gt;Ctrl2 Btn 2&lt;/a&gt;
+&lt;/div&gt;
