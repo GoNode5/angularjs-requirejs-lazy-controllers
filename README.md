@@ -28,6 +28,7 @@ routeConfig.config('../partials/view1.html', 'controllers/first', '#someDomEleme
 &lt;/div&gt;
 </code></pre>
 
+<pre><code>
 /* CONTROLLER 1 (first.js) */
 define([], function () {
 
@@ -41,8 +42,9 @@ define([], function () {
     // Get a reference to div#ctrl1 and apply this controller to it.
     return FirstController;
 });
+</code></pre>
 
-
+<pre><code>
 /* CONTROLLER 2 (second.js) */
 define([], function () {
 
@@ -55,7 +57,9 @@ define([], function () {
      // Get a reference to div#ctrl2 and apply this controller to it.
     return SecondController;
 });
+</code></pre>
 
+<pre><code>
 /* ROUTER (routes.js)
 // Option 2 (prefered) is to add the id of the DOM element in the routeConfig. This will require modification of matys84pl's route-config.js
 define(['app', 'utils/route-config'], function (app, routeConfig) {
@@ -69,6 +73,7 @@ define(['app', 'utils/route-config'], function (app, routeConfig) {
 
     return app;
 });
+</code></pre>
 
 <pre><code>
 &lt;!-- Expected Output --&gt;
