@@ -14,8 +14,7 @@ I've read that it's frowned upon to mod the dom in the controller so I'm looking
 
 routeConfig.config('../partials/view1.html', 'controllers/first', '#someDomElementID')
 
-<pre><code>
-&lt;div id="ctrl1"&gt;
+<pre><code>&lt;div id="ctrl1"&gt;
     &lt;p&gt;{{message}}&lt;/p&gt;
     &lt;a href="#/view1" class="btn"&gt;{{btn1}}&lt;/a&gt;
     &lt;a href="#/view2" class="btn"&gt;{{btn2}}&lt;/a&gt;
@@ -28,8 +27,7 @@ routeConfig.config('../partials/view1.html', 'controllers/first', '#someDomEleme
 &lt;/div&gt;
 </code></pre>
 
-<pre><code>
-/* CONTROLLER 1 (first.js) */
+<pre><code>// CONTROLLER 1 (first.js)
 define([], function () {
 
     function FirstController($scope) {
@@ -40,12 +38,10 @@ define([], function () {
 
     // One option:
     // Get a reference to div#ctrl1 and apply this controller to it.
-    return FirstController;
-});
+    return FirstController;});
 </code></pre>
 
-<pre><code>
-/* CONTROLLER 2 (second.js) */
+<pre><code>// CONTROLLER 2 (second.js)
 define([], function () {
 
     function SecondController($scope) {
@@ -55,12 +51,10 @@ define([], function () {
     }
      // One option:
      // Get a reference to div#ctrl2 and apply this controller to it.
-    return SecondController;
-});
+    return SecondController;});
 </code></pre>
 
-<pre><code>
-/* ROUTER (routes.js)
+<pre><code>// ROUTER (routes.js)
 // Option 2 (prefered) is to add the id of the DOM element in the routeConfig. This will require modification of matys84pl's route-config.js
 define(['app', 'utils/route-config'], function (app, routeConfig) {
 
@@ -71,12 +65,10 @@ define(['app', 'utils/route-config'], function (app, routeConfig) {
         $routeProvider.otherwise({redirectTo:'/view1'});
     });
 
-    return app;
-});
+    return app;});
 </code></pre>
 
-<pre><code>
-&lt;!-- Expected Output --&gt;
+<pre><code>&lt;!-- Expected Output --&gt;
 &lt;div id="ctrl1" ng-controller='FirstController'&gt;
     &lt;p&gt;I'm the 1st controller!&lt;/p&gt;
     &lt;a href="#/view1" class="btn"&gt;Ctrl1 Btn 1&lt;/a&gt;
