@@ -14,6 +14,7 @@ I've read that it's frowned upon to mod the dom in the controller so I'm looking
 
 routeConfig.config('../partials/view1.html', 'controllers/first', '#someDomElementID')
 
+<pre><code>
 &lt;div id="ctrl1"&gt;
     &lt;p&gt;{{message}}&lt;/p&gt;
     &lt;a href="#/view1" class="btn"&gt;{{btn1}}&lt;/a&gt;
@@ -25,6 +26,7 @@ routeConfig.config('../partials/view1.html', 'controllers/first', '#someDomEleme
     &lt;a href="#/view1" class="btn"&gt;{{btn1}}&lt;/a&gt;
     &lt;a href="#/view2" class="btn"&gt;{{btn2}}&lt;/a&gt;
 &lt;/div&gt;
+</code></pre>
 
 /* CONTROLLER 1 (first.js) */
 define([], function () {
@@ -68,7 +70,7 @@ define(['app', 'utils/route-config'], function (app, routeConfig) {
     return app;
 });
 
-
+<pre><code>
 &lt;!-- Expected Output --&gt;
 &lt;div id="ctrl1" ng-controller='FirstController'&gt;
     &lt;p&gt;I'm the 1st controller!&lt;/p&gt;
@@ -81,3 +83,4 @@ define(['app', 'utils/route-config'], function (app, routeConfig) {
     &lt;a href="#/view1" class="btn"&gt;Ctrl2 Btn 1&lt;/a&gt;
     &lt;a href="#/view2" class="btn"&gt;Ctrl2 Btn 2&lt;/a&gt;
 &lt;/div&gt;
+</code></pre>
